@@ -1,6 +1,6 @@
 
+---
 
-```markdown
 # SummarizeSafe: Hallucination Detection System
 
 ## Overview
@@ -13,6 +13,7 @@
 - **Accurate Hallucination Detection**: The system uses cutting-edge large language models (LLMs) from **Ollama** to identify fabricated or hallucinated content in summaries, ensuring the highest degree of accuracy.
 
 ---
+
 
 ## Project Setup
 
@@ -173,14 +174,3 @@ Be as concise and clear as possible in your analysis.
 
 ---
 
-## Contributions
-
-We welcome contributions to **SummarizeSafe**! If you want to contribute, please:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request, and include clear descriptions of your changes.
-
----
-
-
-Now, you can copy and paste the above markdown directly into your `README.md` file. Let me know if it works!
