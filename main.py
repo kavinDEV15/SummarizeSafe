@@ -22,14 +22,14 @@ async def check_hallucinations(request: Request):
     """
     Check for hallucinations in the summary of a given conversation ID.
     """
-    # Extract the convo_id from the request body (JSON)
+    
     req_body = await request.json()
     convo_id = req_body.get("convo_id")
     
-    # Extract text and summary for the given conversation ID
+    
     text, summary = extract_text_and_summary(df, convo_id)
 
-    # Check if text or summary is empty
+   
     if not text or not summary:
         return {"error": "Text or summary not found for the given conversation ID."}
 
@@ -60,7 +60,7 @@ Be as concise and clear as possible in your analysis.
     try:
         # Send request to the locally running Ollama model
         response = requests.post(
-            "http://localhost:11434/api/generate",  # Assuming this is the correct endpoint
+            "http://localhost:11434/api/generate", 
             json={"model": "llama3", "prompt": prompt}
         )
         response.raise_for_status()
@@ -73,7 +73,7 @@ Be as concise and clear as possible in your analysis.
                 llm_chunk = json.loads(line)
                 combined_response += llm_chunk.get('response', '')
             except json.JSONDecodeError:
-                # Skip any malformed lines
+                
                 continue
 
         # Log the combined response for debugging
@@ -86,7 +86,7 @@ Be as concise and clear as possible in your analysis.
         return {
             "text": text,
             "summary": summary,
-            "hallucinations": combined_response.strip(),  # The final paragraph response
+            "hallucinations": combined_response.strip(),  
             "hallucination_count": hallucination_count,
             "conclusion": conclusion
         }
